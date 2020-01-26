@@ -103,8 +103,6 @@ C:\ALL-UNIVER\MAGA\STRPO\MusicStudio\MusicStudio\MusicStudio\bin\zh-Hant\System.
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\obj\Debug\MusicStudio.csprojAssemblyReference.cache
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\obj\Debug\MusicStudio.dll
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\obj\Debug\MusicStudio.pdb
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\musicstudiodb.mdf
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\musicstudiodb_log.ldf
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\MusicStudio.dll.config
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\MusicStudio.dll
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\MusicStudio.pdb
@@ -210,3 +208,5 @@ C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\ru\System.Sp
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\zh-Hans\System.Spatial.resources.dll
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\zh-Hant\System.Spatial.resources.dll
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\obj\Debug\MusicStudio.csproj.CopyComplete
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\App_Data\musicstudiodb.mdf
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudio\bin\App_Data\musicstudiodb_log.ldf

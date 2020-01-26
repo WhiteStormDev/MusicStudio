@@ -115,7 +115,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="musicstudiodb.mdf">
+    <Content Include="App_Data\musicstudiodb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MusicStudioDbModel.Context.tt">
@@ -128,7 +128,7 @@
       <DependentUpon>MusicStudioDbModel.edmx</DependentUpon>
       <LastGenOutput>MusicStudioDbModel.cs</LastGenOutput>
     </Content>
-    <Content Include="musicstudiodb_log.ldf">
+    <Content Include="App_Data\musicstudiodb_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>musicstudiodb.mdf</DependentUpon>
     </Content>

@@ -1,0 +1,16 @@
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\ServerControls.exe.config
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\ServerControls.exe
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\ServerControls.pdb
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\DBLayer.exe
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\EntityFramework.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\EntityFramework.SqlServer.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\DBLayer.pdb
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\DBLayer.exe.config
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\EntityFramework.xml
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\EntityFramework.SqlServer.xml
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\ServerControls.csprojAssemblyReference.cache
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\ServerControls.csproj.CopyComplete
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\ServerControls.exe
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\ServerControls.pdb
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\App_Data\musicstudiodb.mdf
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\App_Data\musicstudiodb_log.ldf

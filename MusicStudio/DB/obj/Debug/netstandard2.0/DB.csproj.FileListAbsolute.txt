@@ -1,0 +1,4 @@
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DB\bin\Debug\netstandard2.0\DB.deps.json
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DB\bin\Debug\netstandard2.0\DB.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DB\obj\Debug\netstandard2.0\DB.AssemblyInfoInputs.cache
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DB\obj\Debug\netstandard2.0\DB.AssemblyInfo.cs

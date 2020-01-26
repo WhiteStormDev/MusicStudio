@@ -1,0 +1,7 @@
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\bin\Debug\netstandard2.0\MusicStudioModels.deps.json
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\bin\Debug\netstandard2.0\MusicStudioModels.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\bin\Debug\netstandard2.0\MusicStudioModels.pdb
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.AssemblyInfoInputs.cache
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.AssemblyInfo.cs
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.pdb
