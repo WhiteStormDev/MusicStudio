@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\ALL-UNIVER\MAGA\STRPO\MusicStudio\MusicStudio\MusicStudio\MusicStudioDbModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\MusicStudioDbModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

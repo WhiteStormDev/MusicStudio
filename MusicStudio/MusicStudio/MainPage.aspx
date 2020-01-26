@@ -86,7 +86,7 @@
                             </asp:Label>
                         </td>
                         <td>
-                            <asp:Button ID="buttonSetNextDate" runat="server"  CommandName="Click" Text="Записать дату" runat="server" CommandArgument='<%# Eval("Id") %>' />
+                            <asp:Button ID="buttonSetNextDate" runat="server"  CommandName="Click" Text="Записать дату" CommandArgument='<%# Eval("Id") %>' />
                         </td>
                         <!-- <td>
                             <asp:Button ID="buttonEditAbonement" runat="server"  CommandName="Click" Text="Редактировать абонемент" runat="server" CommandArgument='<%# Eval("Id") %>' />

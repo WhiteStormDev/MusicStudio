@@ -3,9 +3,9 @@ using System.Linq;
 using System.Web.UI.WebControls;
 using System.Web.UI;
 using System.ComponentModel;
-using MusicStudio;
+using DBLayer;
 
-namespace MusicStudio.ServerControls
+namespace MyServerControls.ServerControls
 {
 	[DefaultProperty("Text")]
 	[ToolboxData("<{0}:PhoneTextBox runat=server></{0}:PhoneTextBox >")]

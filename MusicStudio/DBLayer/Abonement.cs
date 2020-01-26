@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MusicStudio
+namespace DBLayer
 {
     using System;
     using System.Collections.Generic;

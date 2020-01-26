@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MusicStudioDbContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="musicstudiodbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Abonements">
           <Key>
             <PropertyRef Name="Id" />
@@ -102,7 +102,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MusicStudioDbContextStoreContainer">
+        <EntityContainer Name="musicstudiodbModelStoreContainer">
           <EntitySet Name="Abonements" EntityType="Self.Abonements" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
@@ -125,10 +125,11 @@
             <End Role="VisitDates" EntitySet="VisitDates" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MusicStudioDbContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="musicstudiodbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Abonement">
           <Key>
             <PropertyRef Name="Id" />
@@ -155,6 +156,14 @@
           <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Abonements" Relationship="Self.FK_Abonements_Clients" FromRole="Clients" ToRole="Abonements" />
         </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_Subjects" FromRole="Subjects" ToRole="Teachers" />
+        </EntityType>
         <EntityType Name="Teacher">
           <Key>
             <PropertyRef Name="Id" />
@@ -165,9 +174,9 @@
           <Property Name="SecondName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Abonements" Relationship="Self.FK_Abonements_Teachers" FromRole="Teachers" ToRole="Abonements" />
           <Property Name="SubjectId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Subject" Relationship="MusicStudioDbContext.FK_Teachers_Subjects" FromRole="Teacher" ToRole="Subject" />
+          <NavigationProperty Name="Abonements" Relationship="Self.FK_Abonements_Teachers" FromRole="Teachers" ToRole="Abonements" />
+          <NavigationProperty Name="Subject" Relationship="Self.FK_Teachers_Subjects" FromRole="Teachers" ToRole="Subjects" />
         </EntityType>
         <EntityType Name="VisitDate">
           <Key>
@@ -214,9 +223,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Teachers_Subjects">
+          <End Role="Subjects" Type="Self.Subject" Multiplicity="1" />
+          <End Role="Teachers" Type="Self.Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Teachers">
+              <PropertyRef Name="SubjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="musicstudiodbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Abonements" EntityType="Self.Abonement" />
           <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="Subjects" EntityType="Self.Subject" />
           <EntitySet Name="Teachers" EntityType="Self.Teacher" />
           <EntitySet Name="VisitDates" EntityType="Self.VisitDate" />
           <AssociationSet Name="FK_Abonements_Clients" Association="Self.FK_Abonements_Clients">
@@ -231,40 +253,19 @@
             <End Role="Abonements" EntitySet="Abonements" />
             <End Role="VisitDates" EntitySet="VisitDates" />
           </AssociationSet>
-          <EntitySet Name="Subjects" EntityType="MusicStudioDbContext.Subject" />
-          <AssociationSet Name="FK_Teachers_Subjects" Association="MusicStudioDbContext.FK_Teachers_Subjects">
-            <End Role="Subject" EntitySet="Subjects" />
-            <End Role="Teacher" EntitySet="Teachers" />
+          <AssociationSet Name="FK_Teachers_Subjects" Association="Self.FK_Teachers_Subjects">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Teachers" EntitySet="Teachers" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Subject">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Teachers" Relationship="MusicStudioDbContext.FK_Teachers_Subjects" FromRole="Subject" ToRole="Teacher" />
-        </EntityType>
-        <Association Name="FK_Teachers_Subjects">
-          <End Type="MusicStudioDbContext.Subject" Role="Subject" Multiplicity="1" />
-          <End Type="MusicStudioDbContext.Teacher" Role="Teacher" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Subject">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Teacher">
-              <PropertyRef Name="SubjectId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MusicStudioDbContextStoreContainer" CdmEntityContainer="musicstudiodbEntities">
+        <EntityContainerMapping StorageEntityContainer="musicstudiodbModelStoreContainer" CdmEntityContainer="musicstudiodbEntities">
           <EntitySetMapping Name="Abonements">
-            <EntityTypeMapping TypeName="MusicStudioDbContext.Abonement">
+            <EntityTypeMapping TypeName="musicstudiodbModel.Abonement">
               <MappingFragment StoreEntitySet="Abonements">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="LessonsCount" ColumnName="LessonsCount" />
@@ -277,7 +278,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clients">
-            <EntityTypeMapping TypeName="MusicStudioDbContext.Client">
+            <EntityTypeMapping TypeName="musicstudiodbModel.Client">
               <MappingFragment StoreEntitySet="Clients">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -287,33 +288,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="musicstudiodbModel.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="MusicStudioDbContext.Teacher">
+            <EntityTypeMapping TypeName="musicstudiodbModel.Teacher">
               <MappingFragment StoreEntitySet="Teachers">
-                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="SecondName" ColumnName="SecondName" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VisitDates">
-            <EntityTypeMapping TypeName="MusicStudioDbContext.VisitDate">
+            <EntityTypeMapping TypeName="musicstudiodbModel.VisitDate">
               <MappingFragment StoreEntitySet="VisitDates">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="AbonementId" ColumnName="AbonementId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Subjects">
-            <EntityTypeMapping TypeName="MusicStudioDbContext.Subject">
-              <MappingFragment StoreEntitySet="Subjects">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MusicStudio
+namespace DBLayer
 {
     using System;
     using System.Data.Entity;
@@ -27,8 +27,8 @@ namespace MusicStudio
     
         public virtual DbSet<Abonement> Abonements { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<VisitDate> VisitDates { get; set; }
-        public virtual DbSet<Subject> Subjects { get; set; }
     }
 }

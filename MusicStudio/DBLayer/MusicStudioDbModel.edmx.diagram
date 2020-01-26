@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9003c4250fe14e3492072f9ce9209411" Name="Diagram1">
-        <EntityTypeShape EntityType="MusicStudioDbContext.Abonement" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicStudioDbContext.Client" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicStudioDbContext.Teacher" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MusicStudioDbContext.VisitDate" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="MusicStudioDbContext.FK_Abonements_Clients" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicStudioDbContext.FK_Abonements_Teachers" ManuallyRouted="false" />
-        <AssociationConnector Association="MusicStudioDbContext.FK_VisitDates_Abonements" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="MusicStudioDbContext.Subject" Width="1.5" PointX="4.375" PointY="5" />
-        <AssociationConnector Association="MusicStudioDbContext.FK_Teachers_Subjects" />
+      <Diagram DiagramId="ca51e9c7b3d1468b83c1108a07cbd2f8" Name="Diagram1">
+        <EntityTypeShape EntityType="musicstudiodbModel.Abonement" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="musicstudiodbModel.Client" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="musicstudiodbModel.Subject" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="musicstudiodbModel.Teacher" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="musicstudiodbModel.VisitDate" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="musicstudiodbModel.FK_Abonements_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="musicstudiodbModel.FK_Abonements_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="musicstudiodbModel.FK_VisitDates_Abonements" ManuallyRouted="false" />
+        <AssociationConnector Association="musicstudiodbModel.FK_Teachers_Subjects" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

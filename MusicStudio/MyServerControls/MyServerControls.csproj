@@ -58,14 +58,14 @@
     <Compile Include="ServerControls\PhoneBox.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MusicStudio\MusicStudio.csproj">
-      <Project>{286d91fb-d610-4404-a9d5-c0cd52ace034}</Project>
-      <Name>MusicStudio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBLayer\DBLayer.csproj">
+      <Project>{1c800679-8661-495d-ac05-43672bf6f486}</Project>
+      <Name>DBLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
