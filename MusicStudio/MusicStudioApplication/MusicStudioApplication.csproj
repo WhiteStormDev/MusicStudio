@@ -91,16 +91,20 @@
     <Content Include="App_Data\musicstudiodb_log.ldf">
       <DependentUpon>musicstudiodb.mdf</DependentUpon>
     </Content>
+    <Content Include="CreateAbonement.aspx" />
     <Content Include="CreateClient.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EditClient.aspx" />
     <Content Include="Global.asax" />
     <Content Include="MainPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="PagedAbonements.aspx" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery.tmpl.min.js" />
+    <Content Include="Styles\PageAbonementsStyle.css" />
     <Content Include="Web.config" />
     <Content Include="Controls\AbonementControl.ascx" />
     <Content Include="Controls\ClientControl.ascx" />
@@ -109,6 +113,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CreateAbonement.aspx.cs">
+      <DependentUpon>CreateAbonement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateAbonement.aspx.designer.cs">
+      <DependentUpon>CreateAbonement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateClient.aspx.cs">
       <DependentUpon>CreateClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,6 +150,13 @@
     </Compile>
     <Compile Include="MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagedAbonements.aspx.cs">
+      <DependentUpon>PagedAbonements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagedAbonements.aspx.designer.cs">
+      <DependentUpon>PagedAbonements.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\AbonementControl.ascx.cs">

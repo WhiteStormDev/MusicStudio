@@ -9,7 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerControls", "ServerCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStudioApplication", "MusicStudioApplication\MusicStudioApplication.csproj", "{620EDF17-9459-409D-A294-9488E65E0E91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStudioModels", "MusicStudioModels\MusicStudioModels.csproj", "{ADE3BDED-12E9-49F6-9223-3F3ECD8EC1F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicStudioModels", "MusicStudioModels\MusicStudioModels.csproj", "{ADE3BDED-12E9-49F6-9223-3F3ECD8EC1F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLService", "BLService\BLService.csproj", "{B1203763-353D-4AE0-A1EF-C04351DD558F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLInterfaces", "BLInterfaces\BLInterfaces.csproj", "{9155DD91-FEFC-4558-9AFF-80060F57FA0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{ADE3BDED-12E9-49F6-9223-3F3ECD8EC1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADE3BDED-12E9-49F6-9223-3F3ECD8EC1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADE3BDED-12E9-49F6-9223-3F3ECD8EC1F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1203763-353D-4AE0-A1EF-C04351DD558F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1203763-353D-4AE0-A1EF-C04351DD558F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1203763-353D-4AE0-A1EF-C04351DD558F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1203763-353D-4AE0-A1EF-C04351DD558F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9155DD91-FEFC-4558-9AFF-80060F57FA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9155DD91-FEFC-4558-9AFF-80060F57FA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9155DD91-FEFC-4558-9AFF-80060F57FA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9155DD91-FEFC-4558-9AFF-80060F57FA0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

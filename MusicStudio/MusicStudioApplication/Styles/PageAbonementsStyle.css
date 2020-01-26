@@ -1,0 +1,60 @@
+﻿.clickableTH {
+    background-color: #dddddd;
+    text-decoration: underline;
+}
+
+#ID {
+    color: red;
+}
+
+.sortedasc:after {
+    content: "▼";
+}
+
+.sorteddesc:after {
+    content: "▲";
+}
+
+table {
+    border: 2px black solid;
+}
+
+td {
+    border: 1px black solid;
+    width: 200px;
+}
+
+.button {
+    display: block;
+    width: 115px;
+    background: #aaaaaa;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #333333;
+    color: black;
+    font-weight: bold;
+}
+
+.navBtn {
+    display: block;
+    width: 50px;
+    background: #aaffaa;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #33ff33;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navPanel {
+    display: flex;
+    justify-content: center;
+}
+
+#pageIndicator {
+    align-self: center;
+}

@@ -33,49 +33,13 @@ namespace MusicStudioApplication
 		protected global::MusicStudioApplication.Controls.ClientControl clientEditor;
 
 		/// <summary>
-		/// ddlSubject control.
+		/// abonementEditor control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList ddlSubject;
-
-		/// <summary>
-		/// ddlTeacher control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList ddlTeacher;
-
-		/// <summary>
-		/// txtLessonCount control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtLessonCount;
-
-		/// <summary>
-		/// calendarStart control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Calendar calendarStart;
-
-		/// <summary>
-		/// calendarEnd control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Calendar calendarEnd;
+		protected global::MusicStudioApplication.Controls.AbonementControl abonementEditor;
 
 		/// <summary>
 		/// btnSave control.

@@ -69,11 +69,17 @@ namespace MusicStudioApplication
 						return;
 					}
 					var abonement = new Abonement();
+					//abonement.ClientId = client.Id;
+					//abonement.DateEnd = calendarEnd.SelectedDate;
+					//abonement.DateStart = calendarStart.SelectedDate;
+					//abonement.LessonsCount = txtLessonCount.Text == "" ? 0 : int.Parse(txtLessonCount.Text);
+					//abonement.TeacherId = int.Parse(ddlTeacher.SelectedValue);
 					abonement.ClientId = client.Id;
-					abonement.DateEnd = calendarEnd.SelectedDate;
-					abonement.DateStart = calendarStart.SelectedDate;
-					abonement.LessonsCount = txtLessonCount.Text == "" ? 0 : int.Parse(txtLessonCount.Text);
-					abonement.TeacherId = int.Parse(ddlTeacher.SelectedValue);
+					abonement.DateEnd = abonementEditor.DateEnd;
+					abonement.DateStart = abonementEditor.DateStart;
+					abonement.LessonsCount = abonementEditor.LessonsCount;
+					//txtLessonCount.Text == "" ? 0 : int.Parse(txtLessonCount.Text);
+					abonement.TeacherId = abonementEditor.TeacherId;
 					context.Abonements.Add(abonement);
 					//client.CarMakeID = int.Parse(ddlMake.SelectedValue);
 					//client.CarYear = int.Parse(txtYear.Text);
@@ -95,11 +101,12 @@ namespace MusicStudioApplication
 		{
 			using (var context = new musicstudiodbEntities())
 			{
-				ddlTeacher.DataSource = context.Teachers.ToList();
-				ddlTeacher.DataBind();
+				//ddlTeacher.DataSource = context.Teachers.ToList();
+				//ddlTeacher.DataBind();
 
-				ddlSubject.DataSource = context.Subjects.ToList();
-				ddlSubject.DataBind();
+				//ddlSubject.DataSource = context.Subjects.ToList();
+				//ddlSubject.DataBind();
+
 			}
 		}
 	}

@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DBLayer;
-using MusicStudio;
+using MusicStudioModels;
 
 namespace MusicStudioApplication
 {
@@ -24,8 +24,23 @@ namespace MusicStudioApplication
 			dgClients.DeleteCommand += DgClients_DeleteCommand;
 			buttonDel.Click += ButtonDel_Click;
 			buttonAddClient.ServerClick += ButtonAddClient_ServerClick;
-			
+			buttonShowAllAbonements.ServerClick += ButtonShowAllAbonements_ServerClick;
 			rptClientAbonements.ItemCommand += RptClientAbonements_ItemCommand;
+			buttonAddAbonement.ServerClick += ButtonAddAbonement_ServerClick;
+		}
+
+		private void ButtonAddAbonement_ServerClick(object sender, EventArgs e)
+		{
+			var clientModels = dgClients.DataSource as List<ClientModel>;
+			if (clientModels == null || clientModels.Count == 0)
+				return;
+			var clientId = clientModels[dgClients.SelectedIndex].Id;
+			Response.Redirect("CreateAbonement.aspx?CreateAbonementClientId=" + clientId.ToString());
+		}
+
+		private void ButtonShowAllAbonements_ServerClick(object sender, EventArgs e)
+		{
+			Response.Redirect("PagedAbonements.aspx");
 		}
 
 		private void DgClients_EditCommand(object source, DataGridCommandEventArgs e)
@@ -105,6 +120,7 @@ namespace MusicStudioApplication
 				return;
 			var clientId = clientModels[dgClients.SelectedIndex].Id;
 
+			buttonAddAbonement.Visible = true;
 			FillAbonementsByClientId(clientId);
 		}
 

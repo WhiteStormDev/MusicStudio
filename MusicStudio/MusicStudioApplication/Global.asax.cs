@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 
-namespace MusicStudio
+namespace MusicStudioModels
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

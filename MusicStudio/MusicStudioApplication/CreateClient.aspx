@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateClient.aspx.cs" Inherits="MusicStudioApplication.CreateClient" %>
 <%@ Register Src="~/Controls/ClientControl.ascx" TagName="ClientControl" TagPrefix="mus" %>
+<%@ Register Src="~/Controls/AbonementControl.ascx" TagName="AbonementControl" TagPrefix="mab" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,7 +11,8 @@
     <form id="form1" runat="server">
         <mus:ClientControl ID="clientEditor" runat="server"/>
         <hr />
-        <div>
+        <mab:AbonementControl ID="abonementEditor" runat="server" />
+        <%--<div>
             <asp:Label runat="server" Text="Предмет"></asp:Label>
             <asp:DropDownList runat="server" ID ="ddlSubject" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
         </div>
@@ -29,7 +31,7 @@
         <div>
             <asp:Label runat="server" Text="Дата конца действия абонемента"></asp:Label>
             <asp:Calendar runat="server" ID="calendarEnd"></asp:Calendar>
-        </div>
+        </div>--%>
         <asp:Button runat="server" Text="Save" ID="btnSave"/>
         <asp:Button runat="server" Text="Cancel" ID="btnCancel"/>
     </form>

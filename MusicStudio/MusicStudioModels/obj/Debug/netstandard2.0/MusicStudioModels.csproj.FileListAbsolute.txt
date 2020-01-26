@@ -5,3 +5,4 @@ C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.AssemblyInfo.cs
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.dll
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.pdb
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioModels\obj\Debug\netstandard2.0\MusicStudioModels.csprojAssemblyReference.cache

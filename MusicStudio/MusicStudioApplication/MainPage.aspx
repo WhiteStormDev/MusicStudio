@@ -28,6 +28,7 @@
     <form id="form1" runat="server">
         <div>
             <h1>Clients</h1>
+            <button id="buttonShowAllAbonements" runat="server">Show All Abonements</button>
             <button id="buttonAddClient" runat="server">Add New Client</button>
             <asp:Panel ID="errPanel" runat="server" ForeColor="Red" Visible="false">
                 <asp:Label ID="lblMsg" runat="server"></asp:Label>
@@ -46,7 +47,7 @@
                     <asp:ButtonColumn Text="Delete" CommandName="Delete"></asp:ButtonColumn>
                 </Columns>
             </asp:DataGrid>
-            
+            <button id="buttonAddAbonement" runat="server"  visible="false">Add New Abonement</button>
             <asp:Repeater runat="server" ID="rptClientAbonements">
                 <HeaderTemplate>
                     <table>
@@ -97,6 +98,7 @@
                     </table>
                 </FooterTemplate>
             </asp:Repeater>
+
             <asp:Calendar ID="calendarNextDate" runat="server"  visible="false" OnSelectionChanged="CalendarNextDate_SelectionChanged"></asp:Calendar>
         </div>
     </form>

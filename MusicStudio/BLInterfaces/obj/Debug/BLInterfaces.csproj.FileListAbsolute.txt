@@ -1,0 +1,8 @@
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\bin\Debug\BLInterfaces.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\bin\Debug\BLInterfaces.pdb
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\bin\Debug\MusicStudioModels.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\bin\Debug\MusicStudioModels.pdb
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\obj\Debug\BLInterfaces.csprojAssemblyReference.cache
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\obj\Debug\BLInterfaces.csproj.CopyComplete
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\obj\Debug\BLInterfaces.dll
+C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLInterfaces\obj\Debug\BLInterfaces.pdb

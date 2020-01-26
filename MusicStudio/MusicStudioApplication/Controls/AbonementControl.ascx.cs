@@ -11,6 +11,7 @@ namespace MusicStudioApplication.Controls
 	public partial class AbonementControl : System.Web.UI.UserControl
 	{
 		public int AbonementId { get; set; } = 0;
+		public int ClientId { get; set; } = 0;
 		public DateTime DateStart
 		{
 			get => calendarStart.SelectedDate;
@@ -55,10 +56,25 @@ namespace MusicStudioApplication.Controls
 			}
 		}
 
-		public int LessonsCount { get; set; }
+		public int LessonsCount 
+		{ 
+			get => int.Parse(txtLessonCount.Text);
+			set => txtLessonCount.Text = value.ToString();
+		}
 
 		public bool EditMode => AbonementId != 0;
 
+		private void BindDropDownLists()
+		{
+			using (var context = new musicstudiodbEntities())
+			{
+				ddlTeacher.DataSource = context.Teachers.ToList();
+				ddlTeacher.DataBind();
+
+				ddlSubject.DataSource = context.Subjects.ToList();
+				ddlSubject.DataBind();
+			}
+		}
 		private void FillData()
 		{
 			using (var context = new musicstudiodbEntities())
@@ -69,6 +85,8 @@ namespace MusicStudioApplication.Controls
 				LessonsCount = abonement.LessonsCount;
 				SubjectId = abonement.Teacher.SubjectId;
 				TeacherId = abonement.TeacherId;
+
+				
 				context.SaveChanges();
 			}
 		}
@@ -76,6 +94,7 @@ namespace MusicStudioApplication.Controls
 		{
 			if (!IsPostBack)
 			{
+				BindDropDownLists();
 				if (EditMode)
 					FillData();
 			}
