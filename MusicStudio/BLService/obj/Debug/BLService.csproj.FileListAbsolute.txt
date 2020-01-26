@@ -1,5 +1,3 @@
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLService\bin\Debug\App_Data\musicstudiodb.mdf
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLService\bin\Debug\App_Data\musicstudiodb_log.ldf
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLService\bin\Debug\BLService.dll.config
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLService\bin\Debug\BLService.dll
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\BLService\bin\Debug\BLService.pdb

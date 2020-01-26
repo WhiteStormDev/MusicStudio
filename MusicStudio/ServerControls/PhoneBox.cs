@@ -26,7 +26,7 @@ namespace ServerControls
 			get
 			{
 				var res = Text;
-				using (var context = new musicstudiodbEntities())
+				using (var context = new musicstudiodbContext())
 				{
 					var count = (from c in context.Clients where c.PhoneNumber == res select c).Count();
 					if (count > 0)

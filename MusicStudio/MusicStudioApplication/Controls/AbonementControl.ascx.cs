@@ -30,7 +30,7 @@ namespace MusicStudioApplication.Controls
 			}
 			set
 			{
-				using (var context = new musicstudiodbEntities())
+				using (var context = new musicstudiodbContext())
 				{
 					ddlSubject.DataSource = context.Subjects.ToList();
 					ddlSubject.DataBind();
@@ -47,7 +47,7 @@ namespace MusicStudioApplication.Controls
 			get => int.Parse(ddlTeacher.SelectedValue);
 			set
 			{
-				using (var context = new musicstudiodbEntities())
+				using (var context = new musicstudiodbContext())
 				{
 					ddlTeacher.DataSource = context.Teachers.ToList();
 					ddlTeacher.DataBind();
@@ -66,7 +66,7 @@ namespace MusicStudioApplication.Controls
 
 		private void BindDropDownLists()
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				ddlTeacher.DataSource = context.Teachers.ToList();
 				ddlTeacher.DataBind();
@@ -77,7 +77,7 @@ namespace MusicStudioApplication.Controls
 		}
 		private void FillData()
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				var abonement = (from c in context.Abonements where c.Id == AbonementId select c).First();
 				DateStart = abonement.DateStart;

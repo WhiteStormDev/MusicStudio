@@ -1,6 +1,4 @@
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioApplication\obj\Debug\MusicStudioApplication.csprojAssemblyReference.cache
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioApplication\bin\App_Data\musicstudiodb.mdf
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioApplication\bin\App_Data\musicstudiodb_log.ldf
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioApplication\bin\MusicStudioApplication.dll.config
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioApplication\bin\MusicStudioApplication.dll
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\MusicStudioApplication\bin\MusicStudioApplication.pdb

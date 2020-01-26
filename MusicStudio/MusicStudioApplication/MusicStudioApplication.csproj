@@ -87,10 +87,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\musicstudiodb.mdf" />
-    <Content Include="App_Data\musicstudiodb_log.ldf">
-      <DependentUpon>musicstudiodb.mdf</DependentUpon>
-    </Content>
     <Content Include="CreateAbonement.aspx" />
     <Content Include="CreateClient.aspx" />
     <Content Include="Default.aspx" />
@@ -105,6 +101,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\jquery.tmpl.min.js" />
     <Content Include="Styles\PageAbonementsStyle.css" />
+    <Content Include="tmpl\abonementitem.html" />
     <Content Include="Web.config" />
     <Content Include="Controls\AbonementControl.ascx" />
     <Content Include="Controls\ClientControl.ascx" />
@@ -196,6 +193,9 @@
       <Project>{1122bb16-0608-445d-b816-f5bb35a87f93}</Project>
       <Name>ServerControls</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

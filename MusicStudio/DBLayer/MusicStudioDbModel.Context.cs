@@ -13,10 +13,10 @@ namespace DBLayer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class musicstudiodbEntities : DbContext
+    public partial class musicstudiodbContext : DbContext
     {
-        public musicstudiodbEntities()
-            : base("name=musicstudiodbEntities")
+        public musicstudiodbContext()
+            : base("name=musicstudiodbContext")
         {
         }
     

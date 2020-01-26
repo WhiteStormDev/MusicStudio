@@ -115,25 +115,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\musicstudiodb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MusicStudioDbModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MusicStudioDbModel.edmx</DependentUpon>
-      <LastGenOutput>MusicStudioDbModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="MusicStudioDbModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MusicStudioDbModel.edmx</DependentUpon>
-      <LastGenOutput>MusicStudioDbModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="App_Data\musicstudiodb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>musicstudiodb.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +128,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MusicStudioDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MusicStudioDbModel.edmx</DependentUpon>
+      <LastGenOutput>MusicStudioDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MusicStudioDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MusicStudioDbModel.edmx</DependentUpon>
+      <LastGenOutput>MusicStudioDbModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -20,7 +20,7 @@ namespace MusicStudioApplication.Controls
 
 		private void FillData()
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				var client = (from c in context.Clients where c.Id ==  ClientId select c).First();
 				FirstName = client.Name;

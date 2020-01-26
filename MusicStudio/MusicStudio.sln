@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLService", "BLService\BLSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLInterfaces", "BLInterfaces\BLInterfaces.csproj", "{9155DD91-FEFC-4558-9AFF-80060F57FA0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{0EBDB471-1E2B-432F-B054-4EC6618E70DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9155DD91-FEFC-4558-9AFF-80060F57FA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9155DD91-FEFC-4558-9AFF-80060F57FA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9155DD91-FEFC-4558-9AFF-80060F57FA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EBDB471-1E2B-432F-B054-4EC6618E70DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBDB471-1E2B-432F-B054-4EC6618E70DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBDB471-1E2B-432F-B054-4EC6618E70DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBDB471-1E2B-432F-B054-4EC6618E70DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

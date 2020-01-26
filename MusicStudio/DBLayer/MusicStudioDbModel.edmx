@@ -235,7 +235,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="musicstudiodbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="musicstudiodbContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Abonements" EntityType="Self.Abonement" />
           <EntitySet Name="Clients" EntityType="Self.Client" />
           <EntitySet Name="Subjects" EntityType="Self.Subject" />
@@ -263,7 +263,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="musicstudiodbModelStoreContainer" CdmEntityContainer="musicstudiodbEntities">
+        <EntityContainerMapping StorageEntityContainer="musicstudiodbModelStoreContainer" CdmEntityContainer="musicstudiodbContext">
           <EntitySetMapping Name="Abonements">
             <EntityTypeMapping TypeName="musicstudiodbModel.Abonement">
               <MappingFragment StoreEntitySet="Abonements">

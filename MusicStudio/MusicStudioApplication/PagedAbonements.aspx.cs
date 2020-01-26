@@ -13,14 +13,14 @@ namespace MusicStudioApplication
         {
             get
             {
-                return ConfigurationManager.AppSettings["APIServerURL"];
+                return "https://localhost:44346/";//ConfigurationManager.AppSettings["APIServerURL"];
             }
         }
         protected string PageLen
         {
             get
             {
-                return ConfigurationManager.AppSettings["PageLen"] ?? "10";
+                return ConfigurationManager.AppSettings["PageLen"] ?? "5";
             }
         }
         protected void Page_Load(object sender, EventArgs e)

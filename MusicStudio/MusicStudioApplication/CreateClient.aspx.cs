@@ -26,7 +26,7 @@ namespace MusicStudioApplication
 
 		private void BtnSave_Click(object sender, EventArgs e)
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				try
 				{
@@ -99,7 +99,7 @@ namespace MusicStudioApplication
 
 		private void FillData()
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				//ddlTeacher.DataSource = context.Teachers.ToList();
 				//ddlTeacher.DataBind();

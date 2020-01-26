@@ -24,7 +24,7 @@ namespace BLService
 
         public PagedResult<AbonementModel> FindPaged(int page = 1, int pageLen = 10, string sortBy = "", string sort = "")
         {
-            using (var context = new musicstudiodbEntities())
+            using (var context = new musicstudiodbContext())
             {
                 IEnumerable<Abonement> query = null;
                 switch (sort)

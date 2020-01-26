@@ -8,6 +8,4 @@ C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\bin\Debug\EntityFram
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\obj\Debug\DBLayer.csproj.CopyComplete
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\obj\Debug\DBLayer.exe
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\obj\Debug\DBLayer.pdb
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\bin\Debug\App_Data\musicstudiodb.mdf
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\bin\Debug\App_Data\musicstudiodb_log.ldf
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\DBLayer\obj\Debug\DBLayer.csprojAssemblyReference.cache

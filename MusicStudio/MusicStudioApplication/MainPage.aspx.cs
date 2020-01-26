@@ -70,7 +70,7 @@ namespace MusicStudioApplication
 
 		private void SetAbonementDateById(int abonementId)
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				var abon = context.Abonements.First(a => a.Id == abonementId);
 				if (abon == null)
@@ -86,7 +86,7 @@ namespace MusicStudioApplication
 				return;
 
 			var id = (int)ViewState["RepeaterAbonementId"];
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				var abon = context.Abonements.First(a => a.Id == id);
 				if (abon == null) return;
@@ -201,7 +201,7 @@ namespace MusicStudioApplication
 
 			try
 			{
-				using (var cont = new musicstudiodbEntities())
+				using (var cont = new musicstudiodbContext())
 				{
 					if (delAbonements)
 					{
@@ -266,7 +266,7 @@ namespace MusicStudioApplication
 
 		private void FillAbonementsByClientId(int clientId)
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 
 				var ents = from a in context.Abonements
@@ -289,7 +289,7 @@ namespace MusicStudioApplication
 
 		private void FillClients()
 		{
-			using (var cont = new musicstudiodbEntities())
+			using (var cont = new musicstudiodbContext())
 			{
 
 				var clients = (from c in cont.Clients

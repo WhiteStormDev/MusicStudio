@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PagedAbonements.aspx.cs" Inherits="MusicStudioApplication.PagedAbonements" %>
-
+ 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -59,25 +59,25 @@
     var _pageCount = 0;
 
     function loadTemplates() {
-        $.get("tmpl/orderitem.html", function f(data) {
-            $.template("orderItem", data);
+        $.get("tmpl/abonementitem.html", function f(data) {
+            $.template("abonementItem", data);
         });
     }
 
-    function deleteOrderParts(id) {
-        $.ajax({
-            url: serverURL + "/api/orderparts?orderid=" + id,
-            type: 'DELETE',
-            success: function (result) {
-                console.log("Parts for order " + id + " deleted");
-            }
-        });
-    }
+    //function deleteOrderParts(id) {
+    //    $.ajax({
+    //        url: serverURL + "/api/orderparts?orderid=" + id,
+    //        type: 'DELETE',
+    //        success: function (result) {
+    //            console.log("Parts for order " + id + " deleted");
+    //        }
+    //    });
+    //}
 
 
     function deleteEntity(id) {
         $.ajax({
-            url: serverURL + "/api/orders?id=" + id,
+            url: serverURL + "/api/abonements?id=" + id,
             type: 'DELETE',
             success: function (result) {
                 console.log("deleted " + id);
@@ -97,7 +97,7 @@
     }
 
     function loadData(page, pageLen, sortExpr, sort) {
-        var url = serverURL + "/api/orders?";
+        var url = serverURL + "/api/abonements?";
 
         _page = page;
         _sortExpr = sortExpr;
@@ -118,7 +118,7 @@
         $.getJSON(url, function (obj) {
             _pageCount = obj.PageCount;
             $("#pageIndicator").html(_page + " of " + _pageCount);
-            $.tmpl("orderItem", obj.Page).appendTo("#results>table>tbody");
+            $.tmpl("abonementItem", obj.Page).appendTo("#results>table>tbody");
 
             $(".button").click(function (e) {
                 console.log(e);
@@ -167,8 +167,6 @@
             loadData(1, _pageLen, sortExpr, newSort);
             $(e.target).attr("sort", newSort);
         });
-
-
 	});
 </script>    
 </body>

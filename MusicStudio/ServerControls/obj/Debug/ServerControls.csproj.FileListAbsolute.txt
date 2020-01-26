@@ -12,5 +12,3 @@ C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\Ser
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\ServerControls.csproj.CopyComplete
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\ServerControls.exe
 C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\obj\Debug\ServerControls.pdb
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\App_Data\musicstudiodb.mdf
-C:\ALL-UNIVER\MAGA\STRPO\MusicStudioGit\MusicStudio\ServerControls\bin\Debug\App_Data\musicstudiodb_log.ldf

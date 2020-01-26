@@ -26,7 +26,7 @@ namespace MusicStudioApplication
 
 		private void BtnSave_Click(object sender, EventArgs e)
 		{
-			using (var context = new musicstudiodbEntities())
+			using (var context = new musicstudiodbContext())
 			{
 				try
 				{
