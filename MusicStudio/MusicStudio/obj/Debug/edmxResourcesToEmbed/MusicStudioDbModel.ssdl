@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MusicStudioDbContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Abonements">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LessonsCount" Type="int" Nullable="false" />
+    <Property Name="DateStart" Type="date" Nullable="false" />
+    <Property Name="DateEnd" Type="date" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="TeacherId" Type="int" Nullable="false" />
+    <Property Name="NextDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Surname" Type="nvarchar(max)" />
+    <Property Name="SecondName" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Subjects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Teachers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SecondName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VisitDates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="AbonementId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Abonements_Clients">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Abonements" Type="Self.Abonements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Abonements">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Abonements_Teachers">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
+    <End Role="Abonements" Type="Self.Abonements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Abonements">
+        <PropertyRef Name="TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teachers_Subjects">
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitDates_Abonements">
+    <End Role="Abonements" Type="Self.Abonements" Multiplicity="0..1" />
+    <End Role="VisitDates" Type="Self.VisitDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Abonements">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitDates">
+        <PropertyRef Name="AbonementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MusicStudioDbContextStoreContainer">
+    <EntitySet Name="Abonements" EntityType="Self.Abonements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VisitDates" EntityType="Self.VisitDates" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Abonements_Clients" Association="Self.FK_Abonements_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Abonements" EntitySet="Abonements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Abonements_Teachers" Association="Self.FK_Abonements_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Abonements" EntitySet="Abonements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teachers_Subjects" Association="Self.FK_Teachers_Subjects">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitDates_Abonements" Association="Self.FK_VisitDates_Abonements">
+      <End Role="Abonements" EntitySet="Abonements" />
+      <End Role="VisitDates" EntitySet="VisitDates" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

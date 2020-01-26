@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MusicStudioDbContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Abonements">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LessonsCount" Type="int" Nullable="false" />
+          <Property Name="DateStart" Type="date" Nullable="false" />
+          <Property Name="DateEnd" Type="date" Nullable="false" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
+          <Property Name="TeacherId" Type="int" Nullable="false" />
+          <Property Name="NextDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Surname" Type="nvarchar(max)" />
+          <Property Name="SecondName" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teachers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SecondName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="SubjectId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VisitDates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="AbonementId" Type="int" />
+        </EntityType>
+        <Association Name="FK_Abonements_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Abonements" Type="Self.Abonements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Abonements">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Abonements_Teachers">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
+          <End Role="Abonements" Type="Self.Abonements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Abonements">
+              <PropertyRef Name="TeacherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Subjects">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Teachers">
+              <PropertyRef Name="SubjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisitDates_Abonements">
+          <End Role="Abonements" Type="Self.Abonements" Multiplicity="0..1" />
+          <End Role="VisitDates" Type="Self.VisitDates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Abonements">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitDates">
+              <PropertyRef Name="AbonementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MusicStudioDbContextStoreContainer">
+          <EntitySet Name="Abonements" EntityType="Self.Abonements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VisitDates" EntityType="Self.VisitDates" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Abonements_Clients" Association="Self.FK_Abonements_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Abonements" EntitySet="Abonements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Abonements_Teachers" Association="Self.FK_Abonements_Teachers">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Abonements" EntitySet="Abonements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Subjects" Association="Self.FK_Teachers_Subjects">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Teachers" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisitDates_Abonements" Association="Self.FK_VisitDates_Abonements">
+            <End Role="Abonements" EntitySet="Abonements" />
+            <End Role="VisitDates" EntitySet="VisitDates" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MusicStudioDbContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Abonement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LessonsCount" Type="Int32" Nullable="false" />
+          <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateEnd" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <Property Name="TeacherId" Type="Int32" Nullable="false" />
+          <Property Name="NextDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_Abonements_Clients" FromRole="Abonements" ToRole="Clients" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK_Abonements_Teachers" FromRole="Abonements" ToRole="Teachers" />
+          <NavigationProperty Name="VisitDates" Relationship="Self.FK_VisitDates_Abonements" FromRole="Abonements" ToRole="VisitDates" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecondName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Abonements" Relationship="Self.FK_Abonements_Clients" FromRole="Clients" ToRole="Abonements" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Abonements" Relationship="Self.FK_Abonements_Teachers" FromRole="Teachers" ToRole="Abonements" />
+          <Property Name="SubjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Subject" Relationship="MusicStudioDbContext.FK_Teachers_Subjects" FromRole="Teacher" ToRole="Subject" />
+        </EntityType>
+        <EntityType Name="VisitDate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="AbonementId" Type="Int32" />
+          <NavigationProperty Name="Abonement" Relationship="Self.FK_VisitDates_Abonements" FromRole="VisitDates" ToRole="Abonements" />
+        </EntityType>
+        <Association Name="FK_Abonements_Clients">
+          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+          <End Role="Abonements" Type="Self.Abonement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Abonements">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Abonements_Teachers">
+          <End Role="Teachers" Type="Self.Teacher" Multiplicity="1" />
+          <End Role="Abonements" Type="Self.Abonement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Abonements">
+              <PropertyRef Name="TeacherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisitDates_Abonements">
+          <End Role="Abonements" Type="Self.Abonement" Multiplicity="0..1" />
+          <End Role="VisitDates" Type="Self.VisitDate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Abonements">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisitDates">
+              <PropertyRef Name="AbonementId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="musicstudiodbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Abonements" EntityType="Self.Abonement" />
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+          <EntitySet Name="VisitDates" EntityType="Self.VisitDate" />
+          <AssociationSet Name="FK_Abonements_Clients" Association="Self.FK_Abonements_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Abonements" EntitySet="Abonements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Abonements_Teachers" Association="Self.FK_Abonements_Teachers">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Abonements" EntitySet="Abonements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisitDates_Abonements" Association="Self.FK_VisitDates_Abonements">
+            <End Role="Abonements" EntitySet="Abonements" />
+            <End Role="VisitDates" EntitySet="VisitDates" />
+          </AssociationSet>
+          <EntitySet Name="Subjects" EntityType="MusicStudioDbContext.Subject" />
+          <AssociationSet Name="FK_Teachers_Subjects" Association="MusicStudioDbContext.FK_Teachers_Subjects">
+            <End Role="Subject" EntitySet="Subjects" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Teachers" Relationship="MusicStudioDbContext.FK_Teachers_Subjects" FromRole="Subject" ToRole="Teacher" />
+        </EntityType>
+        <Association Name="FK_Teachers_Subjects">
+          <End Type="MusicStudioDbContext.Subject" Role="Subject" Multiplicity="1" />
+          <End Type="MusicStudioDbContext.Teacher" Role="Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Teacher">
+              <PropertyRef Name="SubjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MusicStudioDbContextStoreContainer" CdmEntityContainer="musicstudiodbEntities">
+          <EntitySetMapping Name="Abonements">
+            <EntityTypeMapping TypeName="MusicStudioDbContext.Abonement">
+              <MappingFragment StoreEntitySet="Abonements">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LessonsCount" ColumnName="LessonsCount" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+                <ScalarProperty Name="NextDate" ColumnName="NextDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="MusicStudioDbContext.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teachers">
+            <EntityTypeMapping TypeName="MusicStudioDbContext.Teacher">
+              <MappingFragment StoreEntitySet="Teachers">
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisitDates">
+            <EntityTypeMapping TypeName="MusicStudioDbContext.VisitDate">
+              <MappingFragment StoreEntitySet="VisitDates">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="AbonementId" ColumnName="AbonementId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="MusicStudioDbContext.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
