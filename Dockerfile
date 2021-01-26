@@ -25,7 +25,7 @@ RUN dotnet restore MusicStudio/MusicStudio.sln
 RUN dotnet publish -c release -o /app --no-restore MusicStudio/MusicStudio.sln
 
 # final stage/image s
-FROM gcr.io/google-appengine/aspnetframework:4.7.1
+FROM mcr.microsoft.com/dotnet/framework/runtime:4.8
 # FROM mcr.microsoft.com/dotnet/core/runtime:2.1
 WORKDIR /app
 COPY --from=build /app .
