@@ -11,7 +11,7 @@ COPY /MusicStudio/DBLayer/* ./MusicStudio/DBLayer/
 COPY /MusicStudio/MusicStudioApplication/* ./MusicStudio/MusicStudioApplication/
 COPY /MusicStudio/MusicStudioModels/* ./MusicStudio/MusicStudioModels/
 COPY /MusicStudio/ServerControls/* ./MusicStudio/ServerControls/
-COPY /MusicStudio/Services/* ./MusicStudio/Services
+COPY /MusicStudio/Services/* ./MusicStudio/Services/
 # COPY /FrontEnd/* ./FrontEnd/
 COPY *.sln .
 # WORKDIR /source/MusicStudio
