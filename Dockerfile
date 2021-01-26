@@ -13,15 +13,15 @@ COPY /MusicStudio/MusicStudioModels/* ./MusicStudio/MusicStudioModels/
 COPY /MusicStudio/ServerControls/* ./MusicStudio/ServerControls/
 COPY /MusicStudio/Services/* ./MusicStudio/Services/
 # COPY /FrontEnd/* ./FrontEnd/
-COPY *.sln .
+COPY /MusicStudio/MusicStudio.sln ./MusicStudio/MusicStudio.sln
 # WORKDIR /source/MusicStudio
 
-RUN dotnet restore MusicStudio.sln
+RUN dotnet restore /MusicStudio/MusicStudio.sln
 
 # copy and publish app and libraries
 # COPY . ../.
 # WORKDIR /source
-RUN dotnet publish -c release -o /app --no-restore MusicStudio.sln
+RUN dotnet publish -c release -o /app --no-restore /MusicStudio/MusicStudio.sln
 
 # final stage/image s
 FROM gcr.io/google-appengine/aspnetcore:2.1.1
