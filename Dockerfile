@@ -1,6 +1,6 @@
 # https://hub.docker.com/_/microsoft-dotnet-coreasds
 # FROM gcr.io/google-appengine/aspnetcore:2.1.1
-FROM mcr.microsoft.com/dotnet/framework/sdk:4.7.2 AS build
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.8 AS build
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
