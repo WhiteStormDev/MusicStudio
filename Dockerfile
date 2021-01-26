@@ -1,6 +1,6 @@
 # https://hub.docker.com/_/microsoft-dotnet-coreasds
 # FROM gcr.io/google-appengine/aspnetcore:2.1.1
-FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.7.2 AS build
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
@@ -25,7 +25,7 @@ RUN dotnet restore MusicStudio/MusicStudio.sln
 RUN dotnet publish -c release -o /app --no-restore MusicStudio/MusicStudio.sln
 
 # final stage/image s
-FROM gcr.io/google-appengine/aspnetcore:2.1.1
+FROM gcr.io/google-appengine/aspnetframework:4.7.1
 # FROM mcr.microsoft.com/dotnet/core/runtime:2.1
 WORKDIR /app
 COPY --from=build /app .
