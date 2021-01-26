@@ -12,6 +12,7 @@ COPY /MusicStudio/MusicStudioApplication/* ./MusicStudio/MusicStudioApplication/
 COPY /MusicStudio/MusicStudioModels/* ./MusicStudio/MusicStudioModels/
 COPY /MusicStudio/ServerControls/* ./MusicStudio/ServerControls/
 COPY /MusicStudio/Services/* ./MusicStudio/Services/
+COPY /MusicStudio/packages/* ./MusicStudio/packages/
 # COPY /FrontEnd/* ./FrontEnd/
 COPY /MusicStudio/MusicStudio.sln ./MusicStudio/MusicStudio.sln
 # WORKDIR /source/MusicStudio
